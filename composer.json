@@ -1,7 +1,7 @@
 {
-    "name": "ceddyg/clara-entity-generator",
-    "description": "Repository to generate a CRUD system (Controller, model, repository, view using bootstrap, and more) scanning the shema of the database.",
-    "keywords": ["laravel", "clara", "crud", "entity"],
+    "name": "ceddyg/clara-installer",
+    "description": "Repository to quick set up the database information and first admin, using Sentinel.",
+    "keywords": ["laravel", "clara", "install", "sentinel", "database"],
     "authors": [
         {
             "name": "CeddyG"
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CeddyG\\ClaraEntityGenerator\\": "src/"
+            "CeddyG\\ClaraInstaller\\": "src/"
         }
     }
 }
