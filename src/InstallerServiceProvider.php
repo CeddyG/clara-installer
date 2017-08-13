@@ -24,12 +24,19 @@ class InstallerServiceProvider extends ServiceProvider
             $sApp => base_path().'/app',
         ], 'services');
 
-        // Publish stubs
-        $sResources = realpath(__DIR__.'/resources');
+        // Publish views
+        $sViews = realpath(__DIR__.'/resources');
 
         $this->publishes([
-            $sResources => base_path().'/resources',
-        ], 'stubs');
+            $sViews => base_path().'/resources',
+        ], 'views');
+
+        // Publish migrations
+        $sMigration = realpath(__DIR__.'/database');
+
+        $this->publishes([
+            $sMigration => base_path().'/database',
+        ], 'migrations');
     }
 
     /**
