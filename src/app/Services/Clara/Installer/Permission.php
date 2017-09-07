@@ -25,7 +25,7 @@ class Permission
                 $sName = preg_replace('/admin./', '', $oPerm->getName(), 1);
                 
                 $sTmpName = explode('.', $sName);
-                if($sCurrentPerm != $sTmpName[0])
+                if($sCurrentPerm != $sTmpName[0] && $sTmpName[0] != 'admin')
                 {
                     $aPermissions['admin.'.$sTmpName[0].'.*'] = $sTmpName[0];
                     $sCurrentPerm = $sTmpName[0];

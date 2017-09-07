@@ -54,7 +54,7 @@ class SentinelSubscriber
     
     private static function connectionAdmin($aCredentials, $aInputs)
     {
-        $bRemember = $aInputs['remember'] ? true : false;
+        $bRemember  = array_key_exists('remember', $aInputs);
         
         // Connect admin user
         Sentinel::authenticate($aCredentials, $bRemember);
@@ -68,12 +68,12 @@ class SentinelSubscriber
     public function subscribe($oEvent)
     {
         $oEvent->listen(
-            'App\Events\Install\BeforeInstallEvent',
+            'App\Events\Installer\BeforeInstallEvent',
             'App\Listeners\SentinelSubscriber@validate'
         );
 
         $oEvent->listen(
-            'App\Events\Install\AfterInstallEvent',
+            'App\Events\Installer\AfterInstallEvent',
             'App\Listeners\SentinelSubscriber@store'
         );
     }
