@@ -17,5 +17,12 @@
         "psr-4": {
             "CeddyG\\ClaraInstaller\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CeddyG\\ClaraInstaller\\InstallerServiceProvider"
+            ]
+        }
     }
 }

@@ -17,26 +17,29 @@ class InstallerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Publish services
-        $sApp = realpath(__DIR__.'/app');
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->publishesView();
+        $this->publishesMigrations();
+    }
+    
+    private function publishesView()
+	{
+        $sResources = __DIR__.'/../resources/views';
 
         $this->publishes([
-            $sApp => base_path().'/app',
-        ], 'services');
-
-        // Publish views
-        $sViews = realpath(__DIR__.'/resources');
-
-        $this->publishes([
-            $sViews => base_path().'/resources',
-        ], 'views');
-
-        // Publish migrations
+            $sResources => resource_path('views/vendor/clara-install')
+        ], 'clara.install.views');
+        
+        $this->loadViewsFrom($sResources, 'clara-install');
+	}
+    
+    private function publishesMigrations()
+    {
         $sMigration = realpath(__DIR__.'/database');
 
         $this->publishes([
-            $sMigration => base_path().'/database',
-        ], 'migrations');
+            $sMigration => base_path().'/database'
+        ], 'clara.install.migrations');
     }
 
     /**

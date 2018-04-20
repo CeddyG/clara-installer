@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events\Installer;
+namespace CeddyG\ClaraInstaller\Events;
 
 class AfterInstallEvent
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace CeddyG\ClaraInstaller\Listeners;
 
 use App\Models\User;
 use Sentinel;

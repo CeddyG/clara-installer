@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CeddyG\ClaraInstaller\Http\Controllers;
 
-use App\Services\Clara\Installer\Install;
-use App\Events\Installer\AfterInstallEvent;
-use App\Events\Installer\BeforeInstallEvent;
-use App\Http\Requests\InstallRequest;
+use CeddyG\ClaraInstaller\Install;
+use CeddyG\ClaraInstaller\Events\AfterInstallEvent;
+use CeddyG\ClaraInstaller\Events\BeforeInstallEvent;
+use CeddyG\ClaraInstaller\Http\Requests\InstallRequest;
 
 class InstallController extends Controller
 {
@@ -13,7 +13,7 @@ class InstallController extends Controller
     {
         $sPageTitle = 'Installation';
         
-        return view('install', compact('sPageTitle'));
+        return view('clara-install::install', compact('sPageTitle'));
     }
     
     public function storeBdd(InstallRequest $oRequest)

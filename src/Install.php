@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Clara\Installer;
+namespace CeddyG\ClaraInstaller;
 
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Configuration;
