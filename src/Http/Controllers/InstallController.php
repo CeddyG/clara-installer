@@ -3,6 +3,7 @@
 namespace CeddyG\ClaraInstaller\Http\Controllers;
 
 use CeddyG\ClaraInstaller\Install;
+use App\Http\Controllers\Controller;
 use CeddyG\ClaraInstaller\Events\AfterInstallEvent;
 use CeddyG\ClaraInstaller\Events\BeforeInstallEvent;
 use CeddyG\ClaraInstaller\Http\Requests\InstallRequest;
