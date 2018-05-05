@@ -32,6 +32,6 @@ class InstallController extends Controller
                 ->withInput();
         }
         
-        return redirect('admin/entity');
+        return redirect('admin/clara-entity');
     }
 }
