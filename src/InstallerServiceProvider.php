@@ -3,6 +3,9 @@ namespace CeddyG\ClaraInstaller;
 
 use Illuminate\Support\ServiceProvider;
 
+use Event;
+use CeddyG\ClaraInstaller\Listeners\SentinelSubscriber;
+
 /**
  * Description of EntityServiceProvider
  *
@@ -20,6 +23,8 @@ class InstallerServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->publishesView();
         $this->publishesMigrations();
+        
+        Event::subscribe(SentinelSubscriber::class);
     }
     
     private function publishesView()

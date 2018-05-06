@@ -68,13 +68,13 @@ class SentinelSubscriber
     public function subscribe($oEvent)
     {
         $oEvent->listen(
-            'App\Events\Installer\BeforeInstallEvent',
-            'App\Listeners\SentinelSubscriber@validate'
+            'CeddyG\ClaraInstaller\Events\BeforeInstallEvent',
+            'CeddyG\ClaraInstaller\Listeners\SentinelSubscriber@validate'
         );
 
         $oEvent->listen(
-            'App\Events\Installer\AfterInstallEvent',
-            'App\Listeners\SentinelSubscriber@store'
+            'CeddyG\ClaraInstaller\Events\AfterInstallEvent',
+            'CeddyG\ClaraInstaller\Listeners\SentinelSubscriber@store'
         );
     }
 
