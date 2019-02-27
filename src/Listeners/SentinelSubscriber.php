@@ -9,7 +9,7 @@ class SentinelSubscriber
 {
     public function validate($oEvent) 
     {
-        app('App\Http\Requests\UserRequest');
+        app('CeddyG\ClaraSentinel\Http\Requests\UserRequest');
     }
 
     public function store($oEvent) 
