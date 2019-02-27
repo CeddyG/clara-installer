@@ -2,7 +2,7 @@
 
 namespace CeddyG\ClaraInstaller\Listeners;
 
-use App\Models\User;
+use CeddyG\ClaraSentinel\Models\User;
 use Sentinel;
 
 class SentinelSubscriber
