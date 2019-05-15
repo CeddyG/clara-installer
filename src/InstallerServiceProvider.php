@@ -20,12 +20,33 @@ class InstallerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+		$this->publishesConfig();
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->publishesView();
         $this->publishesMigrations();
         
         Event::subscribe(SentinelSubscriber::class);
     }
+	
+	/**
+	 * Publish config file.
+	 * 
+	 * @return void
+	 */
+	private function publishesConfig()
+	{
+		$sConfigPath = __DIR__ . '/../config/clara.install.php';
+        if (function_exists('config_path')) 
+		{
+            $sPublishPath = config_path('clara.install.php');
+        } 
+		else 
+		{
+            $sPublishPath = base_path('config/clara.install.php');
+        }
+		
+        $this->publishes([$sConfigPath => $sPublishPath], 'clara.install.config');
+	}
     
     private function publishesView()
 	{
@@ -54,6 +75,8 @@ class InstallerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/clara.install.php', 'clara.install'
+        );
     }
 }
