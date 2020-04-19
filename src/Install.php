@@ -42,9 +42,9 @@ class Install
 
         $sEnvFile = str_replace('DB_HOST=127.0.0.1'	, 'DB_HOST='.$aInputs['host'], $sEnvFile);
         $sEnvFile = str_replace('DB_PORT=3306'		, 'DB_PORT='.$aInputs['port'], $sEnvFile);
-        $sEnvFile = str_replace('DB_DATABASE=homestead'	, 'DB_DATABASE='.$aInputs['database'], $sEnvFile);
-        $sEnvFile = str_replace('DB_USERNAME=homestead'	, 'DB_USERNAME='.$aInputs['username'], $sEnvFile);
-        $sEnvFile = str_replace('DB_PASSWORD=secret'	, 'DB_PASSWORD='.$aInputs['db_password'], $sEnvFile);
+        $sEnvFile = str_replace('DB_DATABASE=laravel'	, 'DB_DATABASE='.$aInputs['database'], $sEnvFile);
+        $sEnvFile = str_replace('DB_USERNAME=root'	, 'DB_USERNAME='.$aInputs['username'], $sEnvFile);
+        $sEnvFile = str_replace('DB_PASSWORD='          , 'DB_PASSWORD='.$aInputs['db_password'], $sEnvFile);
 
         \Storage::disk('base')->put('.env', $sEnvFile);
     }
